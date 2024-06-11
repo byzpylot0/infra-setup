@@ -89,7 +89,7 @@ resource "aws_secretsmanager_secret" "db-app-creds" {
 }
 
 resource "aws_secretsmanager_secret_version" "db-app-creds" {
-  secret_id     = aws_secretsmanager_secret.database_credentials.id
+  secret_id     = aws_secretsmanager_secret.db-app-creds.id
   secret_string = jsonencode({
     username = aws_db_instance.mysql.username,
     password = aws_db_instance.mysql.password,
